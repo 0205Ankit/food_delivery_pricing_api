@@ -2,7 +2,7 @@ import { Express, Response, Request } from "express";
 import SwaggerUI from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
 import logger from "./logger";
-import { version } from "../package.json";
+import { version } from "../../package.json";
 
 const options: swaggerJsDoc.Options = {
   definition: {
