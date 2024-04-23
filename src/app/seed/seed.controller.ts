@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import prisma from "../../prisma";
-import { organizations, pricings } from "./seed.data";
+import { getPricings, organizations } from "./seed.data";
 import { StatusCodes } from "http-status-codes";
 
 export default class SeedController {
@@ -23,6 +23,17 @@ export default class SeedController {
         },
       ],
     });
+
+    const items = await prisma.item.findMany();
+
+    if (!items) {
+      return res.status(StatusCodes.BAD_REQUEST).json({
+        success: false,
+        message: "Items not created",
+      });
+    }
+
+    const pricings = getPricings(items[0].id, items[1].id);
 
     // create organizations and their pricings related to items
     organizations.map(async (organization) => {
