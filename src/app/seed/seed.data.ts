@@ -1,3 +1,5 @@
+import { Zones } from "@prisma/client";
+
 export const organizations = [
   {
     name: "Organization 1",
@@ -16,7 +18,16 @@ export const organizations = [
   },
 ];
 
-export const getPricings = (id1: number, id2: number) => [
+export const getPricings = (
+  id1: number,
+  id2: number
+): {
+  zone: Zones;
+  base_distance_in_km: number;
+  fix_price_in_cents: number;
+  itemId: number;
+  km_price_in_cents: number;
+}[] => [
   {
     zone: "central",
     base_distance_in_km: 5,
