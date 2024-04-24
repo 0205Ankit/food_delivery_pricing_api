@@ -7,9 +7,11 @@ export default class SeedController {
   static async seedData(req: Request, res: Response) {
     try {
       // delete all data before seeding
-      await prisma.pricing.deleteMany({});
-      await prisma.item.deleteMany({});
-      await prisma.organization.deleteMany({});
+      Promise.all([
+        await prisma.organization.deleteMany(),
+        await prisma.pricing.deleteMany(),
+        await prisma.item.deleteMany(),
+      ]);
 
       // create items
       await prisma.item.createMany({

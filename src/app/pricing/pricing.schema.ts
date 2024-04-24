@@ -19,7 +19,7 @@ import z from "zod";
  *
  *         organization_id:
  *           type: number
- *           default: 1
+ *           default: 42
  *
  *         total_distance:
  *           type: number
