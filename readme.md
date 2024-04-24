@@ -2,7 +2,8 @@
 
 Generates pricing for a food delivery based on zone and item type
 
-    ### Documentation
+- Documentation
+  https://food-delivery-pricing-api.onrender.com/api-docs/
 
 ## Setup
 
