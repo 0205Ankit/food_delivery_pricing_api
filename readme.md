@@ -1,4 +1,4 @@
-# Food Dilvery Pricing API
+# Food Delivery Pricing API
 
 Generates pricing for a food delivery based on zone and item type
 
